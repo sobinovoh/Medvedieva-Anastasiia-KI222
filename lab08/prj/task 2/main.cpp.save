@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cmath>
+#include <conio.h>
+#include <Windows.h>
+#include "ModulesMedvedieva.h"
+
+using namespace std;
+
+void print_author_info() {
+    cout << "Програму виконала Медведєва Анастасія, All rights reserved ©." << endl;
+}
+
+void print_logical_result(int a, int b) {
+    bool result = (a + 1 > abs(b - 2));
+    string text_result = result ? "true" : "false";
+    cout << "Результат логічного виразу: " << text_result << endl;
+}
+
+void print_values(int x, int y, int z) {
+    cout << "Десяткові значення: x = " << x << ", y = " << y << ", z = " << z << endl;
+    cout << "Шістнадцяткові значення: x = 0x" << hex << x << ", y = 0x" << hex << y << ", z = 0x" << hex << z << endl;
+    cout << "Значення S: " << s_calculation(x, y, z) << endl;
+}
+
+int main() {
+
+    string sentence;
+      SetConsoleCP (1251);
+      SetConsoleOutputCP (1251);
+
+    int x, y, z, a, b;
+
+    cout << "Введіть значення для x, y, z: ";
+    cin >> x >> y >> z;
+
+    cout << "Введіть значення для a, b: ";
+    cin >> a >> b;
+
+    print_author_info();
+    print_logical_result(a, b);
+    print_values(x, y, z);
+
+    return 0;
+}
